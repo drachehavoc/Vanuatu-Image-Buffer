@@ -1,5 +1,16 @@
 RewriteEngine On  
-#RewriteBase /projetos/zzz/
+RewriteBase /projetos/vanuatu/Vanuatu-Image-Buffer/
 
-# {FILE}_-_{SIZE X}_x_{SIZE Y}
-RewriteRule ^(.*?)_-_([0-9]*)_x_([0-9]*)\.(.*?)$  image.php?x=$2&y=$3&file=$1&ext=$4 [L]
+
+# {FILE}_-_{SIZE X}x{SIZE Y}.{EXTENSION} ::  /pasta/imagem_-_200x200.jpg
+RewriteRule ^(.*?)_-_([0-9]*)x([0-9]*)\.(.*?)$  image.php?x=$2&y=$3&file=$1&ext=$4 [L]
+
+
+# {SIZE X}_x_{SIZE Y}/{FILE}.{EXTENSION} :: /200x200/pasta/imagem.jpg
+RewriteRule ^([0-9]*)x([0-9]*)\/(.*?)\.(.*?)$  image.php?x=$1&y=$2&file=$3&ext=$4 [L]
+RewriteRule ^([0-9]*)x([0-9]*)\/$              image.php?x=$1&y=$2                [L]
+RewriteRule ^([0-9]*)x([0-9]*)$                image.php?x=$1&y=$2                [L]
+
+
+# If empty or not found, return image errot
+RewriteRule ^(.*)$ image.php [L]
