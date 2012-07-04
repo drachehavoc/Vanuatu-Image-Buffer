@@ -1,0 +1,5 @@
+RewriteEngine On  
+#RewriteBase /projetos/zzz/
+
+# {FILE}_-_{SIZE X}_x_{SIZE Y}
+RewriteRule ^(.*?)_-_([0-9]*)_x_([0-9]*)\.(.*?)$  image.php?x=$2&y=$3&file=$1&ext=$4 [L]
