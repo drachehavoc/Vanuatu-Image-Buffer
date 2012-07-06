@@ -20,8 +20,7 @@ proporções, apenas mude o 200x200 para a proporção que desejar, estas imagens
 podem ser lincadas em arquivos HTML ou CSS sem maiores dificuldades
 
 exemplo:
--```
-+```html
+```
 <img src="PASTA_DO_SISTEMA/200x200/caminho/da/sua/imagem.jpg"> ou
 <img src="PASTA_DO_SISTEMA/caminho/da/sua/imagem_-_200x200.jpg">
 ```
