@@ -1,5 +1,5 @@
 RewriteEngine On  
-RewriteBase /projetos/vanuatu/Vanuatu-Image-Buffer/
+#RewriteBase /projetos/vanuatu/Vanuatu-Image-Buffer/
 
 
 # {FILE}_-_{SIZE X}x{SIZE Y}.{EXTENSION} ::  /pasta/imagem_-_200x200.jpg
