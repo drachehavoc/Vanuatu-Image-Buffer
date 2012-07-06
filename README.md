@@ -4,7 +4,7 @@ Criado para resolver o eterno 'problema' de criação de thumbs no
 desenvolvimento de sites.
 
 Redimenciona imagens e as grava em um buffer, sempre que solicitado a criação
-de uma imagem já existente no banco o sistema apenas redireciona para a imagem
+de uma imagem já existente no buffer o sistema apenas redireciona para a imagem
 criada anteriormente evitando processamento desnecessario do servidor.
 
 Facilidades
