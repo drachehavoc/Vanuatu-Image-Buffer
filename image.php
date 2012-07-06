@@ -16,7 +16,7 @@
 		
 		// Monta path da imagem buffer
 		$fileBuff = "buffer/{$md5_filename}_-_{$x}_x_{$y}.$ext";
-	
+			
 		// Se não existe um arquivo já gerado para a 
 		// imagem e tamanho solicitado cria um e retorna
 		if( !file_exists($fileBuff) ){
