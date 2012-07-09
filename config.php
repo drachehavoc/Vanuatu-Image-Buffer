@@ -12,3 +12,6 @@
 	$options['notfound']['width']  = 200;
 	$options['notfound']['height'] = 150;
 	
+	// EXTERNAL IMAGES
+	$options['external']['download-original-image'] = true;
+	
