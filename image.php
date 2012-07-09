@@ -39,8 +39,6 @@
 	
 	// Caso o arquivo não exista no caminho especificado
 	else{
-		$x = ( empty($x) ) ? $options['notfound']['width']  : $x;
-		$y = ( empty($y) ) ? $options['notfound']['height'] : $y;
 		require_once 'phpthumb/ThumbLib.inc.php';
 		$thumb = PhpThumbFactory::create($options['notfound']['path']);
 		$thumb->adaptiveResize($x, $y);
