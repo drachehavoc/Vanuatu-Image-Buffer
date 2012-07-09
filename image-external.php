@@ -1,17 +1,14 @@
 <?php // ♣
 	
-	// 127.0.0.1/projetos/vanuatu/Vanuatu-Image-Buffer/ext/200x200/http://fc02.deviantart.net/fs71/f/2010/056/e/9/Japanese_Girl_by_Dreamsofnight.jpg
-	// 127.0.0.1/vanuatu/Vanuatu-Image-Buffer/ext/200x200/http://127.0.0.1/x.png
-	
 	require_once 'config.php';
 	
-	$bufferDir = "buffer-external";
 	$x          = ( isset($_GET['x']   ) ) ? $_GET['x']              : $options['size']['width']  ;
 	$y          = ( isset($_GET['y']   ) ) ? $_GET['y']              : $options['size']['height'] ;
 	$ext        = ( isset($_GET['ext'] ) ) ? $_GET['ext']            : ""                         ;
 	$url        = ( isset($_GET['url'] ) ) ? "{$_GET['url']}.{$ext}" : ""                         ;	
 	$md5        = md5( preg_replace("/http(.){0,1}:\/\//", "", $url) );
 	$bufferFile = "{$md5}_-_{$x}_x_{$y}.{$ext}";
+	$bufferDir  = "buffer-external";
 		
 	// SE A IMAGEM JÁ ESTIVER NO BUFFER, APENAS 
 	// REDIRECIONA PARA A IMAGEM CONTIDA NO BUFFER
