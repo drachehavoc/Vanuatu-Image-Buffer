@@ -25,11 +25,3 @@ Como inserir imagens no HTML:
 * `<img src="pasta-do-sistema/caminho/da/imagem_-_200x200.formato">`, para arquivos locais.
 * `<img src="pasta-do-sistema/ext/200x200/http://url/da/imagem.formato">`, para arquivos extenos.
 * `<img src="pasta-do-sistema/ext/http://url/da/imagem_-_200x200.formato">`, para arquivos externos.
-
-```
-<body>
-    teste
-</body>
-```
-
-> daniel
