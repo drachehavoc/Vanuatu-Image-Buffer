@@ -1,12 +1,12 @@
 RewriteEngine On  
-RewriteBase /projetos/vanuatu/Vanuatu-Image-Buffer/
+#RewriteBase /projetos/vanuatu/Vanuatu-Image-Buffer/
 
 # --------------------------------------------------------------------------------------------------
-# --- CLEAR BUFFER -------------------------------------------------------------------------------------
+# --- CLEAR BUFFER ---------------------------------------------------------------------------------
 # --------------------------------------------------------------------------------------------------
 
-RewriteRule ^clear-buffer\/{0,1}(.*?)$ clear-buffer.php?pass=$1 [QSA,L]
-RewriteRule ^clear\/{0,1}(.*?)$        clear-buffer.php?pass=$1 [QSA,L]
+RewriteRule ^clear-buffer\/{0,1}(.*?)$              clear-buffer.php?pass=$1                 [QSA,L]
+RewriteRule ^clear\/{0,1}(.*?)$                     clear-buffer.php?pass=$1                 [QSA,L]
 
 # --------------------------------------------------------------------------------------------------
 # --- EXTERNAL IMG ---------------------------------------------------------------------------------
