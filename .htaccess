@@ -1,5 +1,5 @@
 RewriteEngine on
-RewriteBase /projetos/vanuatu/Vanuatu-Image-Buffer/
+#RewriteBase /projetos/vanuatu/Vanuatu-Image-Buffer/
 
 # --------------------------------------------------------------------------------------------------
 # --- CLEAR BUFFER ---------------------------------------------------------------------------------
