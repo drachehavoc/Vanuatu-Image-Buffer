@@ -52,4 +52,4 @@ Descompacte o sistema em qualquer pagina no seu servidor, então configure o cam
 
 Bugs
 ----
-* Utilizando o método COVER de geração, em alguns momentos a imagem gera bordas pretas
+* Utilizando o {método-de-geração} COVER, em alguns momentos a imagem gera bordas pretas
