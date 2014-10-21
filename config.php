@@ -3,6 +3,11 @@
     return [
         "base-dir" => __DIR__ . "/examples/",
         "buffer"   => __DIR__ . "/cache/",
+        
+        "original" => [
+            "stock"  => true,
+            "folder" => __DIR__ . "/cache/original-file/",
+        ],
     
         "on-error" => [
             "image"  => "errors/not-found.png",

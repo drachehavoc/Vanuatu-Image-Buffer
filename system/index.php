@@ -1,4 +1,5 @@
 <?php
+
     // crop
     #$strUrl = "tia.png,crop,150x200";
     #$strUrl = "tia.png,crop,150x200,0x0";
@@ -78,6 +79,7 @@
     // Configura imagem original
     // ---------------------------------------------------------------------------------------------
     
+    
         if(strpos($url['file'], "http") === 0){
             $image["path"] = $url['file'];
         }else{
@@ -94,25 +96,54 @@
     
         $ext = explode(".", $url['file']);
         $ext = strtolower(array_pop($ext));
-        
     
+    
+    // Gera cabeçalho da imagem
+    // ---------------------------------------------------------------------------------------------
+    
+    
+        switch($ext){
+            case "png":
+                header('Content-type: image/png');
+                break;                
+                
+            case "jpg":
+            case "jpeg":
+                header('Content-type: image/jpeg');
+                break;
+        }
+    
+    
+    // Copia a imagem original caso seja configurado
+    // ---------------------------------------------------------------------------------------------
+    
+    
+        $originalFile = strtoupper(md5(file_get_contents($image["path"], false, null, 0, 800)));
+        if($config['original']['stock']){
+            if(file_exists($file = "{$config['original']['folder']}/{$originalFile}.{$ext}")){
+                $image["path"] = $file;
+            }else{
+                if(!is_dir($config['original']['folder']))
+                    mkdir($config['original']['folder'], 0777, true);
+                $fileBin = file_get_contents($image["path"]);
+                file_put_contents($file, $fileBin);
+                $imgOriginal = imagecreatefromstring($fileBin);
+            }
+        }
+
+        
     // Cria o buffer
     // ---------------------------------------------------------------------------------------------
-        
-        $saveFile = $config["buffer"] ."/". strtoupper(md5(file_get_contents($image["path"], false, null, 0, 500))) . "_{$url['size'][0]}x{$url['size'][1]}__{$url['method']}__{$url['meta']}.{$ext}";
+    
+    
+        $saveFile = $config["buffer"] ."/{$originalFile}_{$url['size'][0]}x{$url['size'][1]}__{$url['method']}__{$url['meta']}.{$ext}";
         if(file_exists($saveFile)){
-            switch($ext){
-                case "png":
-                    header('Content-type: image/png');
-                    break;
-                    
-                case "jpg":
-                case "jpeg":
-                    header('Content-type: image/jpeg');
-                    break;
-            }
             fpassthru(fopen($saveFile, 'rb'));
             die;
+        }else{
+            $dir = dirname($saveFile);
+            if(!is_dir($dir))
+                mkdir($dir, 0777, true);
         }
         
         
@@ -137,11 +168,11 @@
     // Cria nova imagem
     // ---------------------------------------------------------------------------------------------
     
-    
-        switch($ext){
-            case 'png': $imgOriginal = imagecreatefrompng($image['path']); break;
-            case 'jpg': $imgOriginal = imagecreatefromjpeg($image['path']); break;
-        }
+        if(!isset($imgOriginal))
+            switch($ext){
+                case 'png': $imgOriginal = imagecreatefrompng($image['path']); break;
+                case 'jpg': $imgOriginal = imagecreatefromjpeg($image['path']); break;
+            }
     
     
     // Calcula como a nova umagem será gerada conforme o método de criação
@@ -254,14 +285,12 @@
 
         switch($ext){
             case "png":
-                header('Content-type: image/png');
                 imagepng($imgThumb);
                 imagepng($imgThumb, $saveFile);
                 break;
                 
             case "jpg":
             case "jpeg":
-                header('Content-type: image/jpeg');
                 imagejpeg($imgThumb, null, 99);
                 imagejpeg($imgThumb, $saveFile, 99);
                 break;
