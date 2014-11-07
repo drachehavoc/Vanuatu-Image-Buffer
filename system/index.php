@@ -1,5 +1,5 @@
 <?php
-    
+    //print_r($_GET); die;
 // --------------------------------------------------------------------------------------------------    
 
 
@@ -71,8 +71,8 @@
     // Copia a imagem original caso seja configurado
     // ---------------------------------------------------------------------------------------------
     
-    
-        $originalFile = strtoupper(md5(file_get_contents($image["path"], false, null, 0, 800)));
+        $maxSizeMD5 = 300 * 1024;
+        $originalFile = strtoupper(md5(file_get_contents($image["path"], false, null, null, $maxSizeMD5)));
         if($config['original']['stock']){
             if(file_exists($file = "{$config['original']['folder']}/{$originalFile}.{$ext}")){
                 $image["path"] = $file;
