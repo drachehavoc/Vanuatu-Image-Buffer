@@ -1,50 +1,4 @@
 <?php
-
-    // crop
-    #$strUrl = "tia.png,crop,150x200";
-    #$strUrl = "tia.png,crop,150x200,0x0";
-    #$strUrl = "tia.png,crop,150x200,10x10";
-    
-    // stretch
-    #$strUrl = "tia.png,stretch,150x200";
-    
-    // by-width or by-height
-    #$strUrl = "tia.png,by-width,250x200";
-    #$strUrl = "tia.png,by-height,250x200";
-    
-    // fit
-    #$strUrl = "tia.png,fit,250x200,00FF00";
-    #$strUrl = "tia.png,fit,150x200,FF0000";
-    
-    // cover
-    #$strUrl = "tia.png,cover,400x400";
-    #$strUrl = "tia.png,cover,400x800,center_top";
-    #$strUrl = "tia.png,cover,400x800,center_center";
-    #$strUrl = "tia.png,cover,400x800,center_bottom";
-    #$strUrl = "tia.png,cover,800x400,left_center";
-    #$strUrl = "tia.png,cover,800x400,center_center";
-    #$strUrl = "tia.png,cover,800x400,right_center";
-    # Cover with percentage
-    #$strUrl = "tia.png,cover,800x400,10_center";
-    #$strUrl = "tia.png,cover,800x400,20_center";
-    #$strUrl = "tia.png,cover,800x400,30_center";
-    #$strUrl = "tia.png,cover,800x400,40_center";
-    #$strUrl = "tia.png,cover,800x400,50_center";
-    #$strUrl = "tia.png,cover,800x400,60_center";
-    #$strUrl = "tia.png,cover,800x400,70_center";
-    #$strUrl = "tia.png,cover,800x400,80_center";
-    #$strUrl = "tia.png,cover,800x400,90_center";
-    #$strUrl = "tia.png,cover,800x400,100_center";
-    #$strUrl = "tia.png,cover,400x800,center_10";
-    #$strUrl = "tia.png,cover,400x800,center_20";
-    #$strUrl = "tia.png,cover,400x800,center_30";
-    #$strUrl = "tia.png,cover,400x800,center_40";
-    #$strUrl = "tia.png,cover,400x800,center_50";
-    #$strUrl = "tia.png,cover,400x800,center_60";
-    #$strUrl = "tia.png,cover,400x800,center_70";
-    #$strUrl = "tia.png,cover,400x800,center_80";
-    #$strUrl = "tia.png,cover,400x800,center_90";
-    #$strUrl = "tia.png,cover,400x800,center_100";
     
 // --------------------------------------------------------------------------------------------------    
 
@@ -88,7 +42,7 @@
                     ? $image["path"]
                     : $config['on-error']['image'];
         }
-    
+        
     
     // Busca extenção
     // ---------------------------------------------------------------------------------------------
@@ -220,7 +174,7 @@
                 break;
                 
             case 'cover':
-                if($thumb['largura'] >= $thumb['altura']){
+                if($image['largura'] <= $image['altura']){
                     $index      = $image['largura']/$image['altura'];
                     $newLargura = $thumb['largura'];
                     $newAltura  = $thumb['largura']/$index;

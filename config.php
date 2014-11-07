@@ -1,7 +1,8 @@
 <?php
 
     return [
-        "base-dir" => __DIR__ . "/examples/",
+        //"base-dir" => __DIR__ . "/examples/",
+        "base-dir" => ".",
         "buffer"   => __DIR__ . "/cache/",
         
         "original" => [

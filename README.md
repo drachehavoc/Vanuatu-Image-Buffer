@@ -1,3 +1,4 @@
+
 Vanuatu Image Buffer
 ====================
 Criado para resolver o eterno 'problema' de criação de thumbs no desenvolvimento de sites.
@@ -50,7 +51,16 @@ Descompacte o sistema em qualquer pagina no seu servidor, então configure o cam
         * altura da imagem a ser gerada
     * {meta-dados}
         * em casos método-de-geração específicos é preciso passar parametros a mais como altura e largura, estes valores são passados utilizando este parametro
+To-do
+-----
+* Criar .htaccess
+* Criar forma de buscar aquivos de configuração alternativo
+        
+
+To-do
+-----
+http://127.0.0.1/ambue/?system=img&method=cover&size=200x200&meta=center_center&file=http://wallpaper.ultradownloads.com.br/274038_Papel-de-Parede-Linda-Paisagem-Oceanica-Com-Castelo_1680x1050.jpg
 
 Bugs
 ----
-* Utilizando o {método-de-geração} COVER, em alguns momentos a imagem gera bordas pretas
+* ...
