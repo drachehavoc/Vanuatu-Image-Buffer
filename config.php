@@ -8,6 +8,9 @@
         "original" => [
             "stock"  => true,
             "folder" => __DIR__ . "/cache/original-file/",
+            "md5"    => [
+                "size" => 600 * 1024 
+            ]
         ],
     
         "on-error" => [

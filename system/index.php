@@ -71,8 +71,8 @@
     // Copia a imagem original caso seja configurado
     // ---------------------------------------------------------------------------------------------
     
-        $maxSizeMD5 = 300 * 1024;
-        $originalFile = strtoupper(md5(file_get_contents($image["path"], false, null, null, $maxSizeMD5)));
+        
+        $originalFile = strtoupper(md5(file_get_contents($image["path"], false, null, null, $config['original']['md5']['size'])));
         if($config['original']['stock']){
             if(file_exists($file = "{$config['original']['folder']}/{$originalFile}.{$ext}")){
                 $image["path"] = $file;
